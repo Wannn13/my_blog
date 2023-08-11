@@ -9,6 +9,8 @@
     {{-- <link rel="stylesheet" href="css/style.css"> --}}
 
     <link rel="stylesheet" href="/css/styles.min.css" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
     
     {{-- Bootstrap CSS --}}
     {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"> --}}
@@ -44,6 +46,7 @@
     <script src="/libs/apexcharts/dist/apexcharts.min.js"></script>
     <script src="/libs/simplebar/dist/simplebar.js"></script>
     <script src="/js/dashboard.js"></script>
+
     <script src="/js/script.js"></script>
 
   </body>
