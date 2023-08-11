@@ -35,6 +35,9 @@
         p{
             text-align: justify !important;
         }
+        i .ti-search{
+            padding-top: 10% !important;
+        }
     </style>
 
     <div class="row justify-content-between header mb-3">
@@ -54,7 +57,8 @@
 
                 <div class="input-group pt-3 input-search">
                     <input type="text" class="form-control" placeholder="Search . . ." name="search" value="{{ request('search') }}">
-                    <button class="btn btn-primary" type="submit">Search</button>
+                    {{-- <button class="btn btn-primary" type="submit">Search</button> --}}
+                    <button class="btn btn-primary" type="submit"><i class="ti ti-search fs-6"></i></button>
                 </div>
             </form>
         </div>
