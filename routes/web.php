@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminCategoryController;
 use App\Http\Controllers\AdminUserController;
+use App\Http\Controllers\UserController;
 use App\Models\Category;
 
 use Illuminate\Support\Facades\Route;
@@ -69,3 +70,5 @@ Route::resource('/dashboard/posts', DashboardPostController::class)->middleware(
 Route::resource('/dashboard/categories', AdminCategoryController::class)->except('show')->middleware('admin');
 
 Route::resource('/dashboard/users', AdminUserController::class)->middleware('admin');
+
+Route::resource('/dashboard/user', UserController::class)->middleware('auth');

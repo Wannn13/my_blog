@@ -43,7 +43,7 @@
                   <i class="ti ti-home fs-6"></i>
                   <p class="mb-0 fs-3">Home</p>
                 </a>
-                <a href="/dashboard/users" class="d-flex align-items-center gap-2 dropdown-item">
+                <a href="/dashboard/user" class="d-flex align-items-center gap-2 dropdown-item">
                   <i class="ti ti-user fs-6"></i>
                   <p class="mb-0 fs-3">My Profile</p>
                 </a>

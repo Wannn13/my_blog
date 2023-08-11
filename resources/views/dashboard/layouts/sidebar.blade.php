@@ -65,6 +65,14 @@
               <span class="hide-menu">Posts</span>
             </a>
           </li>
+          <li class="sidebar-item">
+            <a class="sidebar-link {{ Request::is('dashboard/user*') ? 'active' : '' }}" href="/dashboard/user">
+              <span>
+                <i class="ti ti-user"></i>
+              </span>
+              <span class="hide-menu">Profile</span>
+            </a>
+          </li>
 
           @can('admin')
             <li class="nav-small-cap">
