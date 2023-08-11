@@ -42,7 +42,27 @@ class AdminCategoryController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'image' => 'image|file|max:1024',
+            'name' => 'required|max:255',
+            'slug' => 'required|max:50'
+        ]);
         
+        if($request->file('image')){
+            $image = $request->file('image')->store('category-images');
+        } else {
+            $image = null;
+        }
+
+        $data = [
+            'image' => $image,
+            'name' => $request->name,
+            'slug' => $request->slug
+        ];
+
+        Category::create($data);
+
+        return redirect('/dashboard/categories')->with('success', 'New Categories has been Added!');
     }
 
     /**
@@ -79,13 +99,26 @@ class AdminCategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        $rules = ([
-            'name' => 'required|max:255'    
+
+        $request->validate([
+            'image' => 'image|file|max:1024',
+            'name' => 'required|max:255',
+            'slug' => 'required|max:50'
         ]);
         
-        $validatedData = $request->validate($rules);
+        if($request->file('image')){
+            $image = $request->file('image')->store('category-images');
+        } else {
+            $image = null;
+        }
 
-        Category::where('id', $category->id)->update($validatedData);
+        $data = [
+            'image' => $image,
+            'name' => $request->name,
+            'slug' => $request->slug
+        ];
+
+        Category::where('id', $category->id)->update($data);
 
         return redirect('/dashboard/categories')->with('success', 'New Post has been Updated!');
     }

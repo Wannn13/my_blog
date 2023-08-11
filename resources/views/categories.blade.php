@@ -9,7 +9,12 @@
             <div class="col-md-4">
                 <a href="/posts?category={{ $category->slug }}">
                     <div class="card text-bg-dark border-0 mb-4">
-                        <img src="https://source.unsplash.com/500x300/?{{ $category->name }}" class="card-img" alt="{{ $category->name }}">
+                        @if($category->image)
+                            <img src="{{ asset('storage/' . $category->image) }}" class="card-img" alt="{{ $category->name }}">
+                        @else
+                            <img src="https://source.unsplash.com/500x300/?{{ $category->name }}" class="card-img" alt="{{ $category->name }}">
+                        @endif
+
                         <div class="card-img-overlay p-5">
                             <h5 class="card-title text-center py-2 rounded-5 categories" style=" border-top: 100px #000; margin-top: 40%;">{{ $category->name }}</h5>
                         </div>
