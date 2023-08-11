@@ -107,7 +107,7 @@
     </div>
 
     @else
-        <p class="text-center fs-4">No Post Found.</p>
+        <p class="text-center fs-4 mt-5 pt-5 fw-bold">No Post Found.</p>
     @endif
 
     <div class="d-flex justify-content-center mt-5">
