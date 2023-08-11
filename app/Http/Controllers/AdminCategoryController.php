@@ -62,7 +62,7 @@ class AdminCategoryController extends Controller
 
         Category::create($data);
 
-        return redirect('/dashboard/categories')->with('success', 'New Categories has been Added!');
+        return redirect('/dashboard/categories')->with('success', 'New Category has been Added!');
     }
 
     /**
@@ -120,7 +120,7 @@ class AdminCategoryController extends Controller
 
         Category::where('id', $category->id)->update($data);
 
-        return redirect('/dashboard/categories')->with('success', 'New Post has been Updated!');
+        return redirect('/dashboard/categories')->with('success', 'Caetegory has been Updated!');
     }
 
     /**
