@@ -30,7 +30,7 @@
               <th scope="col">No</th>
               <th scope="col">Title</th>
               <th scope="col">Category</th>
-              <th scope="col">Action</th>
+              {{-- <th scope="col">Action</th> --}}
             </tr>
           </thead>
           <tbody>
@@ -40,12 +40,12 @@
                 <td class="pt-3">{{ $post->title }}</td>
                 <td class="text-center pt-3">{{ $post->category->name }}</td>
                 <td class="text-center">
-                    <a href="/dashboard/posts/{{ $post->slug }}" class="btn btn-sm btn-warning text-light">Detail</a>
-                    <a href="/dashboard/posts/{{ $post->slug }}/edit" class="btn btn-sm btn-primary mx-1">Edit</a>
+                    <a href="/dashboard/posts/{{ $post->slug }}" class="btn btn-sm btn-warning text-light"><i class="ti ti-file-description"></i></a>
+                    <a href="/dashboard/posts/{{ $post->slug }}/edit" class="btn btn-sm btn-primary mx-1  px-2"><i class="ti ti-edit"></i></a>
                     <form action="/dashboard/posts/{{ $post->slug }}" method="post" class="d-inline">
                         @method('delete')
                         @csrf
-                        <button class="btn btn-sm btn-danger border-0" onclick="return confirm('Are you sure?')">Delete</button>
+                        <button class="btn btn-sm btn-danger border-0" onclick="return confirm('Are you sure?')"><i class="ti ti-trash"></i></button>
                     </form>
                 </td>
             </tr>

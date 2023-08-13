@@ -31,7 +31,7 @@
               <th scope="col">Name</th>
               <th scope="col">Username</th>
               <th scope="col">Email</th>
-              <th scope="col">Action</th>
+              {{-- <th scope="col">Action</th> --}}
             </tr>
           </thead>
           <tbody>
@@ -42,12 +42,12 @@
                 <td class="text-center pt-3">{{ $user->username }}</td>
                 <td class="text-center pt-3">{{ $user->email }}</td>
                 <td class="text-center">
-                    <a href="/dashboard/users/{{ $user->id }}" class="btn btn-sm btn-warning text-light">Detail</a>
-                    <a href="/dashboard/users/{{ $user->id }}/edit" class="btn btn-sm btn-primary mx-1">Edit</a>
+                    <a href="/dashboard/users/{{ $user->id }}" class="btn btn-sm btn-warning text-light"><i class="ti ti-file-description"></i></a>
+                    <a href="/dashboard/users/{{ $user->id }}/edit" class="btn btn-sm btn-primary mx-1"><i class="ti ti-edit"></i></a>
                     <form action="/dashboard/users/{{ $user->id }}" method="post" class="d-inline">
                         @method('delete')
                         @csrf
-                        <button class="btn btn-sm btn-danger border-0" onclick="return confirm('Are you sure?')">Delete</button>
+                        <button class="btn btn-sm btn-danger border-0" onclick="return confirm('Are you sure?')"><i class="ti ti-trash"></i></button>
                     </form>
                 </td>
             </tr>

@@ -29,7 +29,7 @@
             <tr class="text-center header">
               <th scope="col">No</th>
               <th scope="col">Category Name</th>
-              <th scope="col">Action</th>
+              {{-- <th scope="col">Action</th> --}}
             </tr>
           </thead>
           <tbody>
@@ -38,11 +38,11 @@
                 <td class=" text-center pt-3">{{ $loop->iteration }}</td>
                 <td class="pt-3">{{ $category->name }}</td>
                 <td class="text-center">
-                    <a href="/dashboard/categories/{{ $category->id }}/edit" class="btn btn-sm btn-primary mx-1">Edit</a>
+                    <a href="/dashboard/categories/{{ $category->id }}/edit" class="btn btn-sm btn-primary mx-1"><i class="ti ti-edit"></i></a>
                     <form action="/dashboard/categories/{{ $category->id }}" method="post" class="d-inline">
                         @method('delete')
                         @csrf
-                        <button class="btn btn-sm btn-danger border-0" onclick="return confirm('Are you sure?')">Delete</button>
+                        <button class="btn btn-sm btn-danger border-0" onclick="return confirm('Are you sure?')"><i class="ti ti-trash"></i></button>
                     </form>
                 </td>
             </tr>

@@ -41,7 +41,7 @@
           <input type="text" class="form-control" id="email" name="email" required value="{{ $user->email }}">
         </div>
         <div class="btn-action mt-4">
-          <a href="/dashboard/user/{{ $user->id }}/edit" class="btn btn-md btn-primary mx-1">Edit</a>
+          <a href="/dashboard/user/{{ $user->id }}/edit" class="btn btn-md btn-primary mx-1"><i class="ti ti-edit"></i></a>
         </div>
       </div>
     </div>

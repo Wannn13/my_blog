@@ -38,11 +38,11 @@
           <input type="text" class="form-control" id="email" name="email" required value="{{ old('email', $user->email) }}">
         </div>
         <div class="btn-action mt-4">
-          <a href="/dashboard/users/{{ $user->id }}/edit" class="btn btn-md btn-primary mx-1">Edit</a>
+          <a href="/dashboard/users/{{ $user->id }}/edit" class="btn btn-md btn-primary mx-1"><i class="ti ti-edit"></i></a>
           <form action="/dashboard/users/{{ $user->id }}" method="post" class="d-inline">
               @method('delete')
               @csrf
-              <button class="btn btn-md btn-danger mx-1 border-0" onclick="return confirm('Are you sure?')">Delete</button>
+              <button class="btn btn-md btn-danger mx-1 border-0" onclick="return confirm('Are you sure?')"><i class="ti ti-trash"></i></button>
           </form>
         </div>
       </div>

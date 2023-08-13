@@ -21,29 +21,32 @@
         display: none;
       }
       .main{
-        padding-top: 100px !important;
+        /* padding-top: 100px !important; */
       }
     </style>
     
   </head>
   <body>
-        <!--  Body Wrapper -->
-        <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full" data-sidebar-position="fixed" data-header-position="fixed">
-    
-@include('dashboard.layouts.header')
-
-        
+    <!--  Body Wrapper -->
+    <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full" data-sidebar-position="fixed" data-header-position="fixed">
+      
         @include('dashboard.layouts.sidebar')
 
-    {{-- <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4"> --}}
-        <div class="col-md-9 ms-sm-auto col-lg-10 px-md-5">
-        
-      @yield('container')      
-      
-        </div>
-    </main>
-  </div>
-</div>
+            <div class="body-wrapper">
+
+                @include('dashboard.layouts.header')
+
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                @yield('container')
+                            </div>
+                        </div>
+                    </div>
+
+            </div>
+            
+    </div>
 
 <script src="/js/script.js"></script>
 
