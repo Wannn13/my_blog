@@ -28,7 +28,12 @@
           <li class="nav-item dropdown" style="margin-right: 50px">
             <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2" data-bs-toggle="dropdown"
               aria-expanded="false">
-              <img src="https://source.unsplash.com/500x500/?person" class="rounded-circle" width="35" height="35">
+              @if(Auth::user()->image)
+                <img src="{{ asset('storage/' . Auth::user()->image) }}" class="rounded-circle" width="35" height="35" alt="{{ Auth::user()->name }}">
+              @else
+                <img src="https://source.unsplash.com/500x500/?person" class="rounded-circle" width="35" height="35" alt="{{ Auth::user()->id }}">
+              @endif
+              {{-- <img src="https://source.unsplash.com/500x500/?person" class="rounded-circle" width="35" height="35"> --}}
             </a>
             <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up" aria-labelledby="drop2">
               <div class="message-body">

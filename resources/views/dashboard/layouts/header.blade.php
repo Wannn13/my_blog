@@ -27,14 +27,14 @@
               aria-expanded="false">
 
               {{-- Ieu kondisi gambar lamun hnte ngaupload user na, jadi make ti API --}}
-              {{-- @if($user->image)
-                <img src="{{ asset('storage/' . $user->image) }}" class="rounded-circle" width="35" height="35" alt="{{ $user->name }}">
+              @if(Auth::user()->image)
+                <img src="{{ asset('storage/' . Auth::user()->image) }}" class="rounded-circle" width="35" height="35" alt="{{ Auth::user()->name }}">
               @else
-                <img src="https://source.unsplash.com/500x500/?person" class="rounded-circle" width="35" height="35" alt="{{ $user->id }}">
-              @endif --}}
+                <img src="https://source.unsplash.com/500x500/?person" class="rounded-circle" width="35" height="35" alt="{{ Auth::user()->id }}">
+              @endif
 
               {{-- ieu mh API doang --}}
-              <img src="https://source.unsplash.com/500x500/?person" class="rounded-circle" width="35" height="35">
+              {{-- <img src="https://source.unsplash.com/500x500/?person" class="rounded-circle" width="35" height="35"> --}}
               
             </a>
             <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up" aria-labelledby="drop2">

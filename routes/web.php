@@ -71,4 +71,4 @@ Route::resource('/dashboard/categories', AdminCategoryController::class)->except
 
 Route::resource('/dashboard/users', AdminUserController::class)->middleware('admin');
 
-Route::resource('/dashboard/user', UserController::class)->middleware('auth');
+Route::resource('/dashboard/user', UserController::class)->except('show')->middleware('auth');
