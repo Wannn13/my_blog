@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category; 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
 
 
@@ -107,6 +108,9 @@ class AdminCategoryController extends Controller
         ]);
         
         if($request->file('image')){
+            if($request->oldImage){
+                Storage::delete($request->oldImage);
+            }
             $image = $request->file('image')->store('category-images');
         } else {
             $image = null;

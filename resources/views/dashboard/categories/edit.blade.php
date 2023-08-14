@@ -9,14 +9,29 @@
     <form method="post" action="/dashboard/categories/{{ $category->id }}" enctype="multipart/form-data">
       @method('put')
         @csrf
-        <div class="mb-3">
+        {{-- <div class="mb-3">
           <label for="image" class="form-label">Category Image</label>
+          <input type="hidden" name="oldImage" value="{{ $post->image }}">
           <img class="img-preview img-fluid mb-3 col-sm-5">
           <input class="form-control @error('image') is-invalid @enderror" type="file" id="image" name="image" onchange="PreviewImage()">
           @error('image')
             <div class="invalid-feedback">{{ $message }}</div>
           @enderror
+        </div> --}}
+        <div class="mb-3">
+          <label for="image" class="form-label">Category Image</label>
+          <input type="hidden" name="oldImage" value="{{ $category->image }}">
+            @if($category->image)
+              <img src="{{ asset('storage/' . $category->image) }}" class="img-preview img-fluid mb-3 col-sm-5 d-block">
+            @else
+              <img class="img-preview img-fluid mb-3 col-sm-5">
+            @endif
+              <input class="form-control @error('image') is-invalid @enderror" type="file" id="image" name="image" onchange="PreviewImage()">
+              @error('image')
+                <div class="invalid-feedback">{{ $message }}</div>
+              @enderror
         </div>
+
         <div class="mb-3">
           <label for="name" class="form-label">Category Name</label>
           <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" required autofocus value="{{ old('name', $category->name) }}">

@@ -58,12 +58,10 @@
                 <i class="ti ti-article fs-6"></i>
                 <p class="mb-0 fs-3">Posts</p>
               </a>
-              <div class="d-flex justify-content-center">
-                <form action="/logout" method="post">
-                  @csrf
-                  <button type="submit" class="btn btn-outline-primary mt-2 mb-2 px-5 d-block btn-logout"> Logout </button>
-                </form>
-              </div>
+              <form action="/logout" method="post" class="d-grid gap-2">
+                @csrf
+                <button type="submit" class="btn btn-outline-primary mx-3 my-2 d-block btn-logout">Logout</button>
+              </form>
             </div>
           </div>
         </li>

@@ -7,8 +7,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Hash;
 
-
-
 class AdminUserController extends Controller
 {
     /**
@@ -142,6 +140,9 @@ class AdminUserController extends Controller
         // }
 
         if($request->file('image')){
+            if($request->oldImage){
+                Storage::delete($request->oldImage);
+            }
             $image = $request->file('image')->store('user-images-profile');
         } else {
             $image = null;

@@ -30,12 +30,12 @@
         @endif
         
         <div class="row justify-content-center">
-            <div class="col-lg-4 rounded-5 login pt-5 pb-5">
+            <div class="col-lg-4 rounded-5 login mt-5 pt-5">
                 
                 <main class="form-signin w-100 m-auto">
                     <form action="/login" method="post">
                     @csrf
-                        <h1 class="h3 mb-3 fw-bold text-center mb-4 text-dark">Login</h1>
+                        <h1 class="h3 mb-3 fw-bolder text-center mb-5 text-dark">Login</h1>
                     
                         <div class="form-floating mb-4">
                             <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="name@example.com" autofocus required value="{{ old('email') }}">

@@ -9,7 +9,7 @@
             padding-right: 100px;
         }
         footer{
-            margin-top: 100vh !important;
+            margin-top: 100px !important;
         }
         footer h4{
             color:#fff;
